@@ -100,6 +100,7 @@ Comparison table:
 
 ## Check on the Web
 
+You can check the proof in your browser:
 [Lean4web Live](https://live.lean-lang.org/#url=https%3A%2F%2Fraw.githubusercontent.com%2FKitaKen1%2Ferdos176-nk2-polynomial-bound-lean%2Fmain%2Ferdos176_lean4web.lean)
 
 The standalone web-checkable file is:
