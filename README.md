@@ -12,10 +12,10 @@ You can also check the proof in your browser:
 (This is the Lean4web file for the main `k >= 5` theorem. The small cases
 `k = 1, 2, 3, 4` are handled separately in the appendix below.)
 
-Consequently, for the finite-valued range `k >= 2`, the original `C^k`-type
+(Consequently, for the finite-valued range `k >= 2`, the original `C^k`-type
 upper-bound question follows from this proof: the main theorem gives an
 `O(k^3)` bound for `k >= 5`, and the remaining finite cases `k = 2, 3, 4`
-can be absorbed into the constant `C`.
+can be absorbed into the constant `C`.)
 
 ## Final Lean Target: Natural Language vs. Lean Formalization
 
