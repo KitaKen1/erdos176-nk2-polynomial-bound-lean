@@ -12,6 +12,11 @@ You can also check the proof in your browser:
 (This is the Lean4web file for the main `k >= 5` theorem. The small cases
 `k = 1, 2, 3, 4` are handled separately in the appendix below.)
 
+Consequently, for the finite-valued range `k >= 2`, the original `C^k`-type
+upper-bound question follows from this proof: the main theorem gives an
+`O(k^3)` bound for `k >= 5`, and the remaining finite cases `k = 2, 3, 4`
+can be absorbed into the constant `C`.
+
 ## Final Lean Target: Natural Language vs. Lean Formalization
 
 ### Natural Language Target
@@ -261,3 +266,51 @@ Erdos176Lean/K4.lean
 
 Lean4web:
 [Click here](https://live.lean-lang.org/#url=https%3A%2F%2Fraw.githubusercontent.com%2FKitaKen1%2Ferdos176-nk2-polynomial-bound-lean%2Fmain%2Ferdos176_k4_lean4web.lean)
+
+## Appendix: Relation to the `C^k` Question
+
+The original Problem 176 question asks whether there is an absolute constant
+`C` such that `N(k,2) <= C^k`.  In the present AP-sum formulation, this is a
+finite-valued question for `k >= 2`; the case `k = 1` has no finite `N(1,2)`.
+
+The main Lean theorem proves something stronger for the infinite range
+`k >= 5`: it gives the explicit polynomial bound
+
+```text
+N(k,2) <= floor(2 * (k^2 - 1) * (k - 1) * (2*k + 1) / (k - 3)) + 1.
+```
+
+The right-hand side is `O(k^3)`.  Concretely, it is enough to choose constants
+`A > 0` and `k0` such that, for all `k >= k0`,
+
+```text
+N(k,2) <= A * k^3.
+```
+
+Then choose `C > 1` large enough that, for all `k >= k0`,
+
+```text
+A * k^3 <= C^k.
+```
+
+This is possible because exponential growth eventually dominates polynomial
+growth:
+
+```text
+lim_{k -> infinity} (A * k^3) / C^k = 0.
+```
+
+Combining the two inequalities gives
+
+```text
+N(k,2) <= A * k^3 <= C^k
+```
+
+for all sufficiently large `k`.
+
+The only remaining finite cases below the theorem's hypothesis are
+`k = 2, 3, 4`.  A finite list of cases does not obstruct a `C^k` bound: after
+checking those cases separately, one can enlarge `C` once so that the inequality
+also covers them.  The case `k = 1` is different, since `N(1,2)` is not finite
+in this formulation.  This is why the small-case appendix and the main
+`k >= 5` theorem together address the finite-valued `C^k`-type question.
