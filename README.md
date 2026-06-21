@@ -6,6 +6,9 @@ upper bound on the Erdős Problem 176 quantity `N(k,2)` [Reference 1].
 This Lean formalization was carried out with reference to the existing
 discussion in the Erdős Problem 176 forum thread [Reference 2].
 
+You can also check the proof in your browser:
+[Lean4web Live](https://live.lean-lang.org/#url=https%3A%2F%2Fraw.githubusercontent.com%2FKitaKen1%2Ferdos176-nk2-polynomial-bound-lean%2Fmain%2Ferdos176_lean4web.lean)
+
 ## Final Lean Target: Natural Language vs. Lean Formalization
 
 ### Natural Language Target
@@ -97,6 +100,8 @@ Comparison table:
 
 ## Check on the Web
 
+[Lean4web Live](https://live.lean-lang.org/#url=https%3A%2F%2Fraw.githubusercontent.com%2FKitaKen1%2Ferdos176-nk2-polynomial-bound-lean%2Fmain%2Ferdos176_lean4web.lean)
+
 The standalone web-checkable file is:
 
 ```text
@@ -114,10 +119,6 @@ You can paste or load this file in the Lean web editor:
 ```text
 https://live.lean-lang.org/
 ```
-
-Do not paste this README into Lean4web.  The theorem blocks above are Markdown
-documentation snippets.  To check the proof on the web, paste the contents of
-`erdos176_lean4web.lean`.
 
 The file ends with:
 
