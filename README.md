@@ -9,6 +9,9 @@ discussion in the Erdős Problem 176 forum thread [Reference 2].
 You can also check the proof in your browser:
 [Lean4web Live](https://live.lean-lang.org/#url=https%3A%2F%2Fraw.githubusercontent.com%2FKitaKen1%2Ferdos176-nk2-polynomial-bound-lean%2Fmain%2Ferdos176_lean4web.lean)
 
+(This is the Lean4web file for the main `k >= 5` theorem. The small cases
+`k = 1, 2, 3, 4` are handled separately in the appendix below.)
+
 ## Final Lean Target: Natural Language vs. Lean Formalization
 
 ### Natural Language Target
@@ -186,13 +189,75 @@ Current local result:
 no matches
 ```
 
+## AI Usage
+
+This computation and comment were prepared with assistance from Codex 5.5 using
+xhigh reasoning, and ChatGPT 5.5 Pro.
+
 ## References
 
 - [1] Erdős Problem 176: <https://www.erdosproblems.com/176>
 - [2] Erdős Problems forum thread for Problem 176:
   <https://www.erdosproblems.com/forum/thread/176>
 
-## AI Usage
+## Appendix: Small Values of `k`
 
-This computation and comment were prepared with assistance from Codex 5.5 using
-xhigh reasoning, and ChatGPT 5.5 Pro.
+The final Lean theorem above is deliberately stated for `k >= 5`.  This is not
+a hidden assumption inside the theorem: it is part of the theorem statement.
+The displayed bound contains the denominator `k - 3`, and the averaging
+comparison used in the proof is designed for the range beyond the small cases.
+
+### k=1
+
+There is no finite `N(1,2)` for this AP-sum property: a one-term AP has sum
+`±1`, so its absolute value is never at least `2`.  In particular, this is not
+`N(1,2) = 2`; the usual finite-minimum statement does not apply to `k = 1`.
+
+Lean file:
+
+```text
+Erdos176Lean/K1.lean
+```
+
+Lean4web:
+[Click here](https://live.lean-lang.org/#url=https%3A%2F%2Fraw.githubusercontent.com%2FKitaKen1%2Ferdos176-nk2-polynomial-bound-lean%2Fmain%2Ferdos176_k1_lean4web.lean)
+
+### k=2
+
+The finite Boolean formulation gives `N(2,2) = 3`.
+
+Lean file:
+
+```text
+Erdos176Lean/K2.lean
+```
+
+Lean4web:
+[Click here](https://live.lean-lang.org/#url=https%3A%2F%2Fraw.githubusercontent.com%2FKitaKen1%2Ferdos176-nk2-polynomial-bound-lean%2Fmain%2Ferdos176_k2_lean4web.lean)
+
+### k=3
+
+The finite Boolean formulation gives `N(3,2) = 9`, matching the classical
+`W(2,3) = 9` case.
+
+Lean file:
+
+```text
+Erdos176Lean/K3.lean
+```
+
+Lean4web:
+[Click here](https://live.lean-lang.org/#url=https%3A%2F%2Fraw.githubusercontent.com%2FKitaKen1%2Ferdos176-nk2-polynomial-bound-lean%2Fmain%2Ferdos176_k3_lean4web.lean)
+
+### k =4
+
+The finite Boolean formulation gives `N(4,2) = 13`.
+
+Lean file:
+
+```text
+Erdos176Lean/K4.lean
+```
+
+Lean4web:
+[Click here](https://live.lean-lang.org/#url=https%3A%2F%2Fraw.githubusercontent.com%2FKitaKen1%2Ferdos176-nk2-polynomial-bound-lean%2Fmain%2Ferdos176_k4_lean4web.lean)
